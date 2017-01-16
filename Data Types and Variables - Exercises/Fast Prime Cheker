@@ -1,0 +1,26 @@
+using System;
+
+namespace FastPrimeCheker
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            int number = int.Parse(Console.ReadLine());
+            for (int chekNumber = 2; chekNumber <= number; chekNumber++)
+            {
+                bool specialNumber = true;
+                for (int num = 2; num <= Math.Sqrt(chekNumber); num++)
+                {
+                    if (chekNumber % num == 0)
+                    {
+                        specialNumber = false;
+                        break;
+                    }
+                }
+    Console.WriteLine($"{chekNumber} -> {specialNumber}");
+
+            }
+        }
+    }
+}
