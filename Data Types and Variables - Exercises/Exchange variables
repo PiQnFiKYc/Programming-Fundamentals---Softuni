@@ -1,0 +1,20 @@
+using System;
+
+
+namespace Exchange_variables
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            int firstNumber = int.Parse(Console.ReadLine());
+            int secondNumber = int.Parse(Console.ReadLine());
+            int helpingVariable = firstNumber;
+            firstNumber = secondNumber;
+            secondNumber = helpingVariable;
+            Console.WriteLine("Before: \r\na = {0} \r\nb = {1}",secondNumber,firstNumber);
+            Console.WriteLine("After: \r\na = {1} \r\nb = {0}", secondNumber, firstNumber);
+            
+        }
+    }
+}
