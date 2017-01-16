@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Fibonacci_numbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            long num = long.Parse(Console.ReadLine());
+            long fibonacciNumbers = GetFibNumbers(num);
+            Console.WriteLine(fibonacciNumbers);
+        }
+
+        static long GetFibNumbers(long num)
+        {
+            long fibNumber1 = 1;
+            long fibNumber2 = 1;
+            long fibNumber3 = 1;
+            for (int i = 1; i < num; i++)
+            {
+                fibNumber1 = fibNumber2;
+                fibNumber2 = fibNumber3;
+                fibNumber3 = fibNumber1 + fibNumber2;
+            }
+            return fibNumber3;
+        }
+    }
+}
