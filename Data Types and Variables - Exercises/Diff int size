@@ -1,0 +1,194 @@
+using System;
+
+
+namespace Different_integer_size
+{
+     public class Program
+    {
+        public static void Main(string[] args)
+        {
+            string number = Console.ReadLine();
+            
+            try
+            {
+                sbyte num = sbyte.Parse(number);
+                Console.WriteLine("{0} can fit in:",number);
+                if (num >= 0)
+                {
+                    Console.WriteLine("* sbyte");
+                    Console.WriteLine("* short");
+                    Console.WriteLine("* ushort");
+                    Console.WriteLine("* int");
+                    Console.WriteLine("* uint");
+                    Console.WriteLine("* long");
+            
+                }
+                else
+                {
+                    Console.WriteLine("* byte");
+                    Console.WriteLine("* short");
+                    Console.WriteLine("* int");
+                    Console.WriteLine("* long");
+                   
+                }
+                
+            }
+            catch (Exception)
+            {
+                try
+                {
+                    byte num = byte.Parse(number);
+                    Console.WriteLine("{0} can fit in:", number);
+                    if (num >= 0)
+                    {
+                        Console.WriteLine("* byte");
+                        Console.WriteLine("* short");
+                        Console.WriteLine("* ushort");
+                        Console.WriteLine("* int");
+                        Console.WriteLine("* uint");
+                        Console.WriteLine("* long");
+                       
+                    }
+                    else
+                    {
+                        Console.WriteLine("byte");
+                        Console.WriteLine("* short");
+                        Console.WriteLine("* int");
+                        Console.WriteLine("* long");
+
+                    }
+                }
+                catch (Exception)
+                {
+                    try
+                    {
+                        short num = short.Parse(number);
+                        Console.WriteLine("{0} can fit in:", number);
+                        if (num >= 0)
+                        {
+                            Console.WriteLine("* short");
+                            Console.WriteLine("* ushort");
+                            Console.WriteLine("* int");
+                            Console.WriteLine("* uint");
+                            Console.WriteLine("* long");
+                            
+                        }
+                        else
+                        {
+                            
+                            Console.WriteLine("* short");
+                            Console.WriteLine("* int");
+                            Console.WriteLine("* long");
+
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        try
+                        {
+                            ushort num = ushort.Parse(number);
+                            Console.WriteLine("{0} can fit in:", number);
+                            if (num >= 0)
+                            {
+                                
+                                Console.WriteLine("* ushort");
+                                Console.WriteLine("* int");
+                                Console.WriteLine("* uint");
+                                Console.WriteLine("* long");
+                               
+                            }
+                            else
+                            {
+
+                              
+                                Console.WriteLine("* int");
+                                Console.WriteLine("* long");
+
+                            }
+                        }
+                        catch (Exception)
+                        {
+                            try
+                            {
+                                int num = int.Parse(number);
+                                Console.WriteLine("{0} can fit in:", number);
+                                if (num >= 0)
+                                {
+                                    
+                                  
+                                    Console.WriteLine("* int");
+                                    Console.WriteLine("* uint");
+                                    Console.WriteLine("* long");
+                                   
+                                }
+                                else
+                                {
+
+                                   
+                                    Console.WriteLine("* int");
+                                    Console.WriteLine("* long");
+
+                                }
+                            }
+                            catch (Exception)
+                            {
+                                try
+                                {
+                                    uint num = uint.Parse(number);
+                                    Console.WriteLine("{0} can fit in:", number);
+                                    if (num >= 0)
+                                    {
+                                        
+                                        Console.WriteLine("* uint");
+                                        Console.WriteLine("* long");
+                                       
+                                    }
+                                    else
+                                    {
+
+                                        
+                                       
+                                        Console.WriteLine("* long");
+
+                                    }
+                                }
+                                catch (Exception)
+                                {
+
+                                    try
+                                    {
+                                        long num = long.Parse(number);
+                                        Console.WriteLine("{0} can fit in:", number);
+                                        if (num >= 0)
+                                        {
+                                            
+                                            Console.WriteLine("* long");
+                                            
+                                        }
+                                        else
+                                        {
+
+                                           
+                                            Console.WriteLine("* long");
+
+                                        }
+                                    }
+                                    catch (Exception)
+                                    {
+
+                                        Console.WriteLine("{0} can't fit in any type",number);
+                                    }
+                                }
+                                
+                            }
+                            
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+        }
+    }
+}
