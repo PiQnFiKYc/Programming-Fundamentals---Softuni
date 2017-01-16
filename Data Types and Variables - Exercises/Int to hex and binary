@@ -1,0 +1,17 @@
+using System;
+
+
+namespace Integer_To_Hex_and_binary
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            int number = int.Parse(Console.ReadLine());
+            var result = Convert.ToString(number,16);
+            var result1 = Convert.ToString(number, 2);
+            Console.WriteLine(result.ToUpper());
+            Console.WriteLine(result1);
+        }
+    }
+}
