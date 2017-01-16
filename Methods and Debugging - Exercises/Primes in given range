@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Primes_in_Given_Range
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int startNum = int.Parse(Console.ReadLine());
+            int endNum = int.Parse(Console.ReadLine());
+
+            GetPrimes(startNum, endNum);
+
+        }
+
+        static void GetPrimes(int startNum, int endNum)
+        {
+            if (startNum < 2)
+            {
+                startNum = 2;
+            }
+
+            bool firstPrime = true;
+            for (int num = startNum; num <= endNum; num++)
+            {
+                bool Prime = true;
+                for (int primeNum = 2; primeNum <= Math.Sqrt(num); primeNum++)
+                {
+                   
+                    if (num%primeNum==0)
+                    {
+                        Prime = false;
+                        break;
+
+                    }
+
+                }
+
+                if (Prime && firstPrime)
+                {
+                    Console.Write(num);
+                    firstPrime = false;
+                }
+                else if (Prime)
+                {
+                    Console.Write(", ");
+                    Console.Write(num);
+                }
+            }
+            Console.WriteLine();
+       }    
+    }
+ } 
