@@ -1,0 +1,18 @@
+using System;
+
+namespace Part_of_the_ASCII_Table
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            int firstChar = int.Parse(Console.ReadLine());
+            int lastChar = int.Parse(Console.ReadLine());
+            for (char i = (char)firstChar; i <= (char)lastChar ; i++)
+            {
+                Console.Write(i+" ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
