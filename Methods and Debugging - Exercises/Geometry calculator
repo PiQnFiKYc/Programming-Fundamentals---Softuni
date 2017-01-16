@@ -1,0 +1,66 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GeometryCalculator
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string typeOfGeometry = Console.ReadLine();
+           
+            
+            if (typeOfGeometry == "triangle")
+            {
+               double side = double.Parse(Console.ReadLine());
+               double height = double.Parse(Console.ReadLine());
+               double result = GetAreaOfTriangle(side, height);
+               Console.WriteLine("{0:f2}",result);
+            }
+            else if (typeOfGeometry == "square")
+            {
+                double side = double.Parse(Console.ReadLine());
+                double result = GetAreaOfSquare(side);
+                Console.WriteLine("{0:f2}", result);
+            }
+            else if (typeOfGeometry == "rectangle")
+            {
+                double width = double.Parse(Console.ReadLine());
+                double height = double.Parse(Console.ReadLine());
+                double result = GetAreaOfRectangle(width, height);
+                Console.WriteLine("{0:f2}", result);
+            }
+            else if (typeOfGeometry == "circle")
+            {
+                double radius = double.Parse(Console.ReadLine());
+                double result = GetAreaOfCircle(radius);
+                Console.WriteLine("{0:f2}", result);
+            }
+        }
+
+        static double GetAreaOfTriangle(double side, double height)
+        {
+            
+            double area = (side * height) / 2;
+            return area;
+        }
+        static double GetAreaOfSquare(double side)
+        {
+            double area = side * side;
+            return area;
+        }
+        static double GetAreaOfRectangle(double width, double height)
+        {
+            double area = width * height;
+            return area;
+        }
+        static double GetAreaOfCircle(double radius)
+        {
+            double area = Math.PI * radius * radius;
+            return area;
+        }
+    }
+}
