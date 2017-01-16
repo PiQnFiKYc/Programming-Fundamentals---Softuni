@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Days_of_week
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] days = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
+            int weekdays = int.Parse(Console.ReadLine());
+            if (weekdays>=1 && weekdays<=7)
+            {
+                Console.WriteLine(days[weekdays-1]);
+            }
+            else
+            {
+                Console.WriteLine("Invalid day!");
+            }
+        }
+    }
+}
