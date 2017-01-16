@@ -1,0 +1,14 @@
+using System;
+
+namespace Variable_in_hex_format
+{
+     public class Variable
+    {
+        public static void Main(string[] args)
+        {
+            string variableInHex = Console.ReadLine();
+            int number = Convert.ToInt32(variableInHex, 16);
+            Console.WriteLine(number);
+        }
+    }
+}
