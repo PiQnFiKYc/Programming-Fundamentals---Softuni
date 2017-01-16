@@ -1,0 +1,20 @@
+using System;
+
+namespace Methods___exercises
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            string name = GetName();
+            Console.WriteLine("Hello, {0}!",name);
+
+        }
+
+        private static string GetName()
+        {
+            string name = Console.ReadLine();
+            return name;
+        }
+    }
+}
