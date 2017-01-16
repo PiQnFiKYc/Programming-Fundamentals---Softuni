@@ -1,0 +1,78 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GreaterOfTwoValues
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var type = Console.ReadLine();
+            if (type == "int")
+            {
+                int firstValue = int.Parse(Console.ReadLine());
+                int secondValue =int.Parse(Console.ReadLine());
+                int max = GetMax(firstValue, secondValue);
+                Console.WriteLine(max);
+            }
+            else if (type == "char")
+            {
+                var firstValue = Console.ReadLine();
+                var secondValue = Console.ReadLine();
+                var max = GetMax(firstValue, secondValue);
+                Console.WriteLine(max);
+
+            }
+            else if (type == "string")
+            {
+                string firstValue = Console.ReadLine();
+                string secondValue = Console.ReadLine();
+                string max = GetMax(firstValue, secondValue);
+                Console.WriteLine(max);
+            }
+            
+           
+        }
+
+        private static string GetMax(string firstValue, string secondValue)
+        {
+            if (firstValue.CompareTo(secondValue) >= 0 )
+            {
+                return firstValue;
+            }
+            else
+            {
+                return secondValue;
+            }
+        }
+
+        private static char GetMax(char firstValue, char secondValue)
+        {
+            if (firstValue>=secondValue)
+            {
+                return firstValue;
+            }
+            else
+            {
+                return secondValue;
+            }
+        }
+
+        private static int GetMax(int firstValue, int secondValue)
+        {
+            if (firstValue >= secondValue)
+            {
+                return firstValue;
+            }
+            else
+            {
+                return secondValue;
+            }
+        }
+
+
+    }
+}
