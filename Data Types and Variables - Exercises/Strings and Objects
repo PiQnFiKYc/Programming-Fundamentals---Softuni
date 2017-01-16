@@ -1,0 +1,16 @@
+using System;
+
+namespace Strings_and_Objects
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            string firstInput = "Hello";
+            string secondInput = "World";
+            object output = firstInput + " " + secondInput;
+            string realOutput = (string) output;
+            Console.WriteLine(realOutput);
+        }
+    }
+}
