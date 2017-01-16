@@ -1,0 +1,13 @@
+using System;
+ 
+class Program
+{
+    static void Main()
+    {
+        long a = long.Parse(Console.ReadLine());
+ 
+        string[] names = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+ 
+        Console.WriteLine(names[Math.Abs(a % 10)]);
+    }
+}
