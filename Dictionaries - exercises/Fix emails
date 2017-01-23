@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _03.A_Miner_Task
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Dictionary<string, string> myDict = new Dictionary<string, string>();
+
+
+
+
+            for (int i = 1; ; i++)
+            {
+                string name = Console.ReadLine();
+
+                if (name.Equals("stop"))
+                {
+                    break;
+                }
+
+                string[] email =Console.ReadLine().Split('.');
+                
+                if (email[1] == "bg")
+                {
+                    //Тук проверява дали съществува такъв key в myDic директроията и ако не го аддва
+                    if (!myDict.ContainsKey(name))
+                    {
+                        myDict.Add(name, string.Join(".",email));
+                    }
+
+                    //тук увеличаваме quantity-то на key-a
+                    
+                }
+
+                
+            }
+
+            foreach (var item in myDict)
+            {
+                Console.WriteLine("{0} -> {1}", item.Key, item.Value);
+            }
+        }
+    }
+}
