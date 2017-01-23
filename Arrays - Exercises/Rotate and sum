@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Rotate_and_sum
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var nums = Console.ReadLine().Split(' ').Select(int.Parse).ToList();
+            int k = int.Parse(Console.ReadLine());
+            int[] result = new int [nums.Count];
+            
+            ;
+            for (int i = 0; i < k; i++)
+            {
+                var lastNum = nums.Last();
+                for (int j = nums.Count-1; j > 0; j--)
+                {
+
+                    nums[j] = nums[j - 1];
+                }
+                nums[0] = lastNum;
+                for (int h = 0; h < nums.Count; h++)
+                {
+                    result[h] += nums[h];
+                }
+            
+            }
+            
+            Console.WriteLine(String.Join(" ",result));
+        }
+    }
+}
