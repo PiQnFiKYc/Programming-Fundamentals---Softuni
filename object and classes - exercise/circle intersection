@@ -1,0 +1,79 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace intersection_of_circles
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] firstCircleParams = Console.ReadLine().Split().Select(int.Parse).ToArray();
+            int[] secondCircleParams = Console.ReadLine().Split().Select(int.Parse).ToArray();
+
+            Point firstPoint = new Point();
+            firstPoint.X = firstCircleParams[0];
+            firstPoint.Y = firstCircleParams[1];
+
+            Circle firstCircle = new Circle();
+            firstCircle.Radius = firstCircleParams[2];
+            firstCircle.Center = firstPoint;
+
+            Point secondPoint = new Point();
+            secondPoint.X = secondCircleParams[0];
+            secondPoint.Y = secondCircleParams[1];
+
+            Circle secondCircle = new Circle();
+            secondCircle.Radius = secondCircleParams[2];
+            secondCircle.Center = secondPoint;
+
+            if (Circle.Intersect(firstCircle, secondCircle))
+            {
+                Console.WriteLine("Yes");
+            }
+            else
+            {
+                Console.WriteLine("No");
+            }
+           
+        }
+    }
+    class Circle
+    {
+        public int Radius { get; set; }
+
+        public Point Center { get; set; }
+
+        //public Circle(int radius, Point center)
+        //{
+        //    this.Radius = radius;
+        //    this.Center = center;
+        //}
+
+        public static bool Intersect(Circle firstCircle, Circle secondCircle)
+        {
+            int deltaX = Math.Abs(firstCircle.Center.X - secondCircle.Center.X);
+            int deltaY = Math.Abs(firstCircle.Center.Y - secondCircle.Center.Y);
+
+            double distance = Math.Sqrt(deltaY * deltaY + deltaX * deltaX);
+
+            int sumOfRadius = firstCircle.Radius + secondCircle.Radius;
+
+            if (distance <= sumOfRadius)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+    class Point
+    {
+        public int X { get; set; }
+        public int Y { get; set; }
+    }
+}
