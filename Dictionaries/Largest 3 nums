@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Largest_3_numbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<double> nums = Console.ReadLine().Split(' ').Select(double.Parse).ToList();
+            nums.Sort();
+            nums.Reverse();
+            //double result=0;
+            if (nums.Count < 3)
+            {
+                for (int i = 0; i < nums.Count; i++)
+                {
+                     Console.Write("{0} ",nums[i]);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    Console.Write("{0} ", nums[i]);
+                }
+            }
+            
+            Console.WriteLine();
+            
+        }
+    }
+}
