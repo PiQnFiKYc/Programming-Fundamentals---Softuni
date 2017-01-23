@@ -1,0 +1,20 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ReverseAnArray
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var arr = Console.ReadLine().Split(' ').Reverse().ToArray();
+            
+            Console.Write(string.Join(" ",arr));
+            Console.WriteLine();
+
+        }
+    }
+}
