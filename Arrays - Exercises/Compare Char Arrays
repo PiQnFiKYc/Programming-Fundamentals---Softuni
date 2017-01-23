@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace compare_Char_Arrays
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            char[] arr1 = Console.ReadLine().Split(' ').Select(char.Parse).ToArray();
+            char[] arr2 = Console.ReadLine().Split(' ').Select(char.Parse).ToArray();
+            var longestArr = Math.Min(arr1.Length, arr2.Length);
+            for (int i = 0; i < longestArr; i++)
+            {
+                if (arr1[i] > arr2[i])
+                {
+                    Console.WriteLine(string.Join("",arr2));
+                    Console.WriteLine(string.Join("", arr1));
+                    break;
+                }
+                else if (arr1[i] < arr2[i])
+                {
+                    Console.WriteLine(string.Join("",arr1));
+                    Console.WriteLine(string.Join("",arr2));
+                    break;
+                }
+                else
+                {
+
+                    if (longestArr == arr1.Length && i == longestArr - 1) //дали 2-я е с по-малка д-на от 1-я и е последната проверка
+                    {
+                        Console.WriteLine(string.Join("", arr2));
+                        Console.WriteLine(string.Join("", arr1));
+                    }
+                    else if (longestArr == arr2.Length && i == longestArr - 1) //дали 1-я е с по-малка д-на от 2-я и е последната проверка
+                    {
+                        Console.WriteLine(string.Join("", arr2));
+                        Console.WriteLine(string.Join("", arr1));
+                    }
+                    else // i != longestArr-1 за случая charArr1[i] = arr1[i]
+                    {
+                        continue;
+                    }
+                }
+            }
+            
+        }
+    }
+}
