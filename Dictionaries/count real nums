@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Count_real_numbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] numbersAsString = Console.ReadLine().Split(' ');
+            double[] numbers = new double[numbersAsString.Length];
+
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                numbers[i] = double.Parse(numbersAsString[i]);
+            }
+
+            SortedDictionary<double, int> dic = new SortedDictionary<double, int>();
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if (dic.ContainsKey(numbers[i]))
+                {
+                    dic[numbers[i]]++;
+                }
+                else
+                {
+                    dic[numbers[i]] = 1;
+                }
+            }
+            foreach (KeyValuePair<double,int> num in dic)
+            {
+                Console.WriteLine($"{num.Key} -> {num.Value}");
+            }
+        }
+    }
+}
