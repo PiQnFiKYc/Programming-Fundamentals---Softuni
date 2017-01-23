@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace __Sum__Min__Max__Average
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            int[] nums = new int[n];
+            int minNum=0;
+            int maxNum=0;
+            int sumOfNums=0;
+            double avgOfNums=0;
+            for (int i = 0; i < nums.Length; i++)
+            {
+                nums[i] = int.Parse(Console.ReadLine());
+            }
+            for (int i = 0; i < nums.Length; i++)
+            {
+                minNum = nums.Min();
+                maxNum = nums.Max();
+                sumOfNums = nums.Sum();
+                avgOfNums = nums.Average();
+
+            }
+            Console.WriteLine($"Sum = {sumOfNums}");
+            Console.WriteLine($"Min = {minNum}");
+            Console.WriteLine($"Max = {maxNum}");
+            Console.WriteLine($"Average = {avgOfNums}");
+
+
+        }
+    }
+}
