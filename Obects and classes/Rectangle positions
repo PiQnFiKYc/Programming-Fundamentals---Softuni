@@ -1,0 +1,66 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace RectanglePosition
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Rectangle r1 = ReadRectangle();
+            Rectangle r2 = ReadRectangle();
+            Console.WriteLine(r1.IsInside(r2) ? "Inside" :
+              "Not inside");
+
+        }
+
+        private static Rectangle ReadRectangle()
+        {
+            int[] input = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+            Rectangle rectInput = new Rectangle();
+            rectInput.Left = input[0];
+            rectInput.Top = input[1];
+            rectInput.Width = input[2];
+            rectInput.Height = input[3];
+            return rectInput;
+            
+        }
+    }
+    class Rectangle
+    {
+        public int Top { get; set; }
+        public int Left { get; set; }
+        public int Width { get; set; }
+        public int Height { get; set; }
+
+        int CalcArea()
+        {
+            return Height * Width;
+        }
+        public int Bottom
+        {
+            get
+            {
+                return Top + Height;
+
+            }
+        }
+        public int Right
+        {
+            get
+            {
+                return Left + Width;
+            }
+        }
+
+        public bool IsInside(Rectangle r)
+        {
+            return(r.Left <= Left) && (r.Right >= Right) &&
+                    (r.Top <= Top) && (r.Bottom >= Bottom);
+
+        }
+    }
+}
