@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace FixEmails
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string name;
+            string email;
+            string pattern;
+
+            Dictionary<string, string> result = new Dictionary<string, string>();
+            do
+            {
+                name = Console.ReadLine();
+                if (name=="stop")
+                {
+                    break;
+                }
+                email = Console.ReadLine();
+                pattern = email.Substring(email.Length - 2, 2);
+
+                if (pattern == "bg")
+                {
+                    result.Add(name, email);
+                }
+
+                else continue;
+
+
+
+                
+            } while (name!="stop");
+
+            foreach (var pair in result)
+            {
+                Console.WriteLine("{0} -> {1}",pair.Key,pair.Value);
+            }
+        }
+    }
+}
